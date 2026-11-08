@@ -1,4 +1,5 @@
-<!DOCTYPE HTML>
+[세포와 물질대사 (기말) OX 퀴즈.html](https://github.com/user-attachments/files/34547587/OX.html)
+<!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>세포와 물질대사 (기말) OX 퀴즈</title>
@@ -256,19 +257,19 @@ const U4=[
 ["포도당 농도가 높을수록 효모의 발효 속도가 빠르다.",1,""],
 ["최종 산물이 사람에게 해로우면 발효가 아니라 부패라고 한다.",1,""]
 ];
-구성 단위=[["1. 효소의 작용 원리",U1],["2. 효소의 작용에 영향을 미치는 요인",U2],["3. 세포호흡",U3],["4. 발효",U4],["5. 광합성 (1)·(2)",U5]];
+const UNITS=[["1. 효소의 작용 원리",U1],["2. 효소의 작용에 영향을 미치는 요인",U2],["3. 세포호흡",U3],["4. 발효",U4],["5. 광합성 (1)·(2)",U5]];
 const ALL=[].concat(U1,U2,U3,U4,U5);let cur=[],i=0,right=0,wrong=[],done=false,curSet=[];
 
 const $=id=>document.getElementById(id);
-함수 sh(a){a=a. slice();(k=a. length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1);[a][k],a[j]]=[a[j],a[k]]}return a}
-함수 go(set){if(set!==틀렸습니다)curSet=set;cur=sh(set);if(!cur.length) 리턴;i=0;right=0;rong=[];['시작', 'res'].ForEach(x=>$(x).classList.add('숨김');$('퀴즈').classList.remove('숨김');show()}
-함수 쇼 (){const q=cur[i];$('pg').textContent=(i+1)+' / '+cur'.길이;$('pb').스타일.width=(i/cur.length*100)+'%';$('q').textContent=q[0];$('fb').classlist.add('hide');$('nx').classlist.add('hide');$('btns').classlist.remove('hide');done=false}
-함수 ans(a){if(완료) 반환; 완료=참; const q=cur[i], ok=a===q[1];if(ok)right++; else이 잘못되었습니다. push(q);
-$('fb').innerHTML='<span class='+(ok? '좋음': '나쁨')+">'+(ok?'정답!':'오답')+'</span> 정답은 <b>'+(q[1]?'O': 'X')+'/<b>'+(q[2]?<br>+q[2]:'');
-$('fb')classList.remove('숨김'); $('btns')classList.add('숨김'); $('nx').텍스트 내용=i===cur.length-1결과 보기': '다음'; $('nx').classList.remove('숨기기')}
-함수 next(){i++;if(i<cur.length) 리턴 쇼();$('퀴즈').classlist.add('숨김');$('res').classlist.remove('숨김');
-('sc').textContent=right+' / '+cur'.길이;$('msg').textContent=wrong.length?'틀린 '+wrong.length+'문제를 다시 풀어 보세요.:'전부 맞혔어요!';$('wr')style.display=wrong.length?': 'none';리뷰 ()}
-함수 검토 (){const r=$( 'rv'};r.innerHTML=";if(!wrong.length) 반환;const h=document.createElement('div');h.className='sub';h.style.marginTop='12px';h.textContent='틀린 문제의 올바른 선지 (⭕ 원래 옳은 선지 / ✏️ 옳게 고친 선지)';r.appendChild(h);wrong.forEach(q=>{const d=document.createElement('div');d.className='fb';d.style.marginTop='8px';let t=q[0];if(!q[1]){const e=q[2]||'';t=/\.$/.test(e)?e:q[0]+' → 정정: '+e}d.textContent=(q[1]?⭕ ':'✏️ ')+t;r.appendChild(d)}}
-기능 홈 () {['quiz','res'].각 항목(x=>$(x).classList.add('숨기기');$('시작').classList.remove('숨기기')}
-함수 renderUnits(){const u=$( 'units');UNITES.각 (([n,q]))={const b=document.createElement('버튼');b.className='bs';b.styletAlign='left';b.textContent=q.length?n+' · '+q.length+' 문제':n+' · 준비 중';if(q.length)b.onclick=()=>go(q);else b.disable=true;u.appendChild(b)}}
-렌더 유닛(); </script></main><body></html>
+function sh(a){a=a.slice();for(let k=a.length-1;k>0;k--){const j=Math.floor(Math.random()*(k+1));[a[k],a[j]]=[a[j],a[k]]}return a}
+function go(set){if(set!==wrong)curSet=set;cur=sh(set);if(!cur.length)return;i=0;right=0;wrong=[];['start','res'].forEach(x=>$(x).classList.add('hide'));$('quiz').classList.remove('hide');show()}
+function show(){const q=cur[i];$('pg').textContent=(i+1)+' / '+cur.length;$('pb').style.width=(i/cur.length*100)+'%';$('q').textContent=q[0];$('fb').classList.add('hide');$('nx').classList.add('hide');$('btns').classList.remove('hide');done=false}
+function ans(a){if(done)return;done=true;const q=cur[i],ok=a===q[1];if(ok)right++;else wrong.push(q);
+$('fb').innerHTML='<span class="'+(ok?'good':'bad')+'">'+(ok?'정답!':'오답')+'</span> 정답은 <b>'+(q[1]?'O':'X')+'</b>'+(q[2]?'<br>'+q[2]:'');
+$('fb').classList.remove('hide');$('btns').classList.add('hide');$('nx').textContent=i===cur.length-1?'결과 보기':'다음';$('nx').classList.remove('hide')}
+function next(){i++;if(i<cur.length)return show();$('quiz').classList.add('hide');$('res').classList.remove('hide');
+$('sc').textContent=right+' / '+cur.length;$('msg').textContent=wrong.length?'틀린 '+wrong.length+'문제를 다시 풀어 보세요.':'전부 맞혔어요!';$('wr').style.display=wrong.length?'':'none';review()}
+function review(){const r=$('rv');r.innerHTML='';if(!wrong.length)return;const h=document.createElement('div');h.className='sub';h.style.marginTop='12px';h.textContent='틀린 문제의 올바른 선지 (⭕ 원래 옳은 선지 / ✏️ 옳게 고친 선지)';r.appendChild(h);wrong.forEach(q=>{const d=document.createElement('div');d.className='fb';d.style.marginTop='8px';let t=q[0];if(!q[1]){const e=q[2]||'';t=/\.$/.test(e)?e:q[0]+' → 정정: '+e}d.textContent=(q[1]?'⭕ ':'✏️ ')+t;r.appendChild(d)})}
+function home(){['quiz','res'].forEach(x=>$(x).classList.add('hide'));$('start').classList.remove('hide')}
+function renderUnits(){const u=$('units');UNITS.forEach(([n,q])=>{const b=document.createElement('button');b.className='bs';b.style.textAlign='left';b.textContent=q.length?n+' · '+q.length+'문제':n+' · 준비 중';if(q.length)b.onclick=()=>go(q);else b.disabled=true;u.appendChild(b)})}
+renderUnits();</script></main></body></html>
