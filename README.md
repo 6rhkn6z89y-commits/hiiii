@@ -1,4 +1,3 @@
-[세포와 물질대사 (기말) OX 퀴즈.html](https://github.com/user-attachments/files/34547547/OX.html)[Uploading 세포와 물질대사 (기말) OX 퀴즈.html…]])
 <!DOCTYPE HTML>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
